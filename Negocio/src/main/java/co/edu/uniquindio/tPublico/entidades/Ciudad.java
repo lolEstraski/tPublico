@@ -4,8 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
-
 @Entity
 @Getter
 @Setter
@@ -23,12 +21,17 @@ public class Ciudad implements Serializable {
     //----------------------------------- Atribustos de la entidad -------------------------------------
     @Column(nullable = false)
     private String nombreCiudad;
-
-    // --------------------------------- Entidades Relacionadad --------------------------------------
-
     //Constructor
     public Ciudad(String nombreCiudad) {
         this.nombreCiudad = nombreCiudad;
     }
 
+    //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
+
+    @JoinColumn(nullable = false)
+    @ManyToOne
+    private Ruta id;
+
+    @OneToOne
+    private Ubicacion ubicacion;
 }

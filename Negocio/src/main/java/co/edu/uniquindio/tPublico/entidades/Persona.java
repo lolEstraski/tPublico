@@ -12,7 +12,6 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
-@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Persona  implements Serializable {
 
@@ -40,4 +39,16 @@ public class Persona  implements Serializable {
     @ElementCollection
     private List<String> telefonos;
 
+    @Builder
+    public Persona(Integer cedula, String nombre, String email, String domicilio, Integer edad, List<String> telefonos) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.email = email;
+        this.domicilio = domicilio;
+        this.edad = edad;
+        this.telefonos = telefonos;
+    }
+
+    public Persona() {
+    }
 }

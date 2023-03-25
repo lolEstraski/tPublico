@@ -4,26 +4,33 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Pasajero extends  Persona implements Serializable {
+public class RutaParadas implements Serializable {
 
-    @Column(nullable = false)
-    private String password;
-    @Column(nullable = false)
-    private String usuario;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
+    private Integer codigo;
 
-    public Pasajero(String password, String usuario) {
-        this.password = password;
-        this.usuario = usuario;
+    @Builder
+    public RutaParadas(Integer codigo) {
+        this.codigo = codigo;
     }
 
     //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
 
-    @JoinColumn(nullable = false)
     @ManyToOne
-    private Ruta id;
+    @JoinColumn(nullable = false)
+    private Ruta ruta;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Parada parada;
+
 }
