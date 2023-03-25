@@ -1,0 +1,5 @@
+/.idea/
+/negocio/build/
+*.class
+/.gradle/
+/web/src/main/resources/application.properties
