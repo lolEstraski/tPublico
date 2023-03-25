@@ -28,9 +28,9 @@ public class Ubicacion  implements Serializable {
     //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "idUbicacion")
+    @OneToMany(mappedBy = "codigo")
     private List<Parada> Paradas;
 
-    @OneToOne(mappedBy = "idUbicacion")
+    @OneToOne(mappedBy = "codigo")
     private Ciudad ciudad;
 }

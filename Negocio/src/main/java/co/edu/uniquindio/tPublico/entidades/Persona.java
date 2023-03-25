@@ -51,4 +51,7 @@ public class Persona  implements Serializable {
 
     public Persona() {
     }
+
+    public Persona(Integer cedula) {
+    }
 }

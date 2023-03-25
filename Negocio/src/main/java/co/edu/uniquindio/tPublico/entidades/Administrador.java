@@ -12,26 +12,21 @@ import java.util.List;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Administrador extends Persona implements Serializable {
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codigo;
-
     @Column(nullable = false)
     private String contrasena;
 
     @Column(nullable = false)
     private String nombreUsuario;
 
-    @Builder
-    public Administrador(Integer codigo, String contrasena, String nombreUsuario) {
-        this.codigo = codigo;
+    public Administrador(Integer cedula) {
+        super(cedula);
         this.contrasena = contrasena;
         this.nombreUsuario = nombreUsuario;
     }
-//----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
+
+    //-----------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
     @ToString.Exclude
-    @OneToMany(mappedBy = "codigo")
+    @OneToMany(mappedBy = "cedula")
     private List<Ruta> rutas;
 
 

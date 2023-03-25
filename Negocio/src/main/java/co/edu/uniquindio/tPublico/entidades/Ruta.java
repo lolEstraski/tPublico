@@ -24,7 +24,7 @@ public class Ruta implements Serializable {
     //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
     @JoinColumn(nullable = false)
     @ManyToOne
-    private Administrador codigo;
+    private Administrador cedula;
 
     @JoinColumn(nullable = false)
     @ManyToOne
