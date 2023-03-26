@@ -33,7 +33,7 @@ public class Empresa implements Serializable{
 
     //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
 
+    @OneToMany(mappedBy = "empresa")
     @ToString.Exclude
-    @OneToMany(mappedBy = "nit")
     private List<Ruta> rutas;
 }

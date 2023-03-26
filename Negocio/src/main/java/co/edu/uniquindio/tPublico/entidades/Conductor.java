@@ -16,7 +16,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Conductor extends Persona implements Serializable {
 
-    @JoinColumn(nullable = false)
     @ManyToOne
-    private Ruta id;
+    @JoinColumn(nullable = false)
+    private Ruta rutaC;
 }

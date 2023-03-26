@@ -27,7 +27,7 @@ public class RutaParadas implements Serializable {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Ruta ruta;
+    private Ruta rutaParada;
 
     @ManyToOne
     @JoinColumn(nullable = false)

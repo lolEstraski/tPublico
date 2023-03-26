@@ -23,7 +23,7 @@ public class Pasajero extends  Persona implements Serializable {
 
     //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
 
-    @JoinColumn(nullable = false)
     @ManyToOne
-    private Ruta id;
+    @JoinColumn(nullable = false)
+    private Ruta rutaPasajero;
 }

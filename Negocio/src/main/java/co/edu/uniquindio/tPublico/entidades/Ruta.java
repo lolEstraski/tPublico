@@ -26,24 +26,25 @@ public class Ruta implements Serializable {
     @ManyToOne
     private Administrador cedula;
 
-    @JoinColumn(nullable = false)
-    @ManyToOne
-    private Empresa nit;
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Empresa empresa;
+
+    @OneToMany(mappedBy = "rutaPasajero")
     @ToString.Exclude
-    @OneToMany(mappedBy = "id")
     private List<Pasajero> pasajeros;
 
+    @OneToMany(mappedBy = "rutaC")
     @ToString.Exclude
-    @OneToMany(mappedBy = "id")
     private List<Conductor> conductores;
 
+    @OneToMany(mappedBy = "ruta")
     @ToString.Exclude
-    @OneToMany(mappedBy = "idHorario")
     private List<Horario> horarios;
 
-    @ToString.Exclude
     @OneToMany(mappedBy = "codigo")
+    @ToString.Exclude
     private List<RutaParadas> rutaParadas;
 
     @ToString.Exclude

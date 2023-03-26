@@ -29,8 +29,9 @@ public class Parada implements Serializable {
 
     //----------------------------ENTIDAD RELACIÓN-----------------------------------------------------------------
 
+
+    @OneToMany(mappedBy = "rutaParada")
     @ToString.Exclude
-    @OneToMany(mappedBy = "parada")
     private List<RutaParadas> rutaParadas;
 
     @ManyToOne
